@@ -13,7 +13,6 @@ import { COLORS, FONTS } from "../constants/theme";
 import { images } from "../constants";
 import {
 	ChatBottomNavigation,
-	MainBottomNavigation,
 	MainTopNavigation,
 } from "../navigations";
 

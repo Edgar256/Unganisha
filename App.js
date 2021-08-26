@@ -12,6 +12,7 @@ import {
 	HelpSupport,
 	Inbox,
 	Login,
+	Demo,
 	MyProfile,
 	Navigation,
 	NewsFeed,
@@ -36,7 +37,7 @@ const Stack = createStackNavigator();
 export default function App() {
 	return (
 		<NavigationContainer theme={theme}>
-			<Stack.Navigator initialRouteName={"SignUp"}>
+			<Stack.Navigator initialRouteName={"Demo"}>
 				{/* Screens */}
 				<Stack.Screen
 					name="Chats"
@@ -156,6 +157,13 @@ export default function App() {
 						headerShown: false,
 					}}
 					component={SignUp}
+				/>
+				<Stack.Screen
+					name="Demo"
+					options={{
+						headerShown: false,
+					}}
+					component={Demo}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>

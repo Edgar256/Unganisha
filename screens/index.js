@@ -15,6 +15,7 @@ import MyProfile from "./MyProfile";
 import GroupProfile from "./GroupProfile";
 import Login from "./Login";
 import SignUp from "./SignUp";
+import Demo from "./Demo";
 
 export {
 	Chats,
@@ -34,4 +35,5 @@ export {
 	GroupProfile,
 	Login,
 	SignUp,
+	Demo
 };

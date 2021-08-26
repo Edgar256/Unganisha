@@ -9,8 +9,8 @@ import {
 	ScrollView,
 	ImageBackground,
 	Alert,
-	Modal,
 	TextInput,
+	Modal
 } from "react-native";
 import { COLORS, FONTS, SIZES } from "../constants/theme";
 import { images } from "../constants";
@@ -24,7 +24,7 @@ const MyProfile = ({ navigation }) => {
 	return (
 		<SafeAreaView style={{ width: "100%", height: "100%" }}>
 			<MainTopNavigation
-				style={{ zIndex: 10 }}
+				style={{ zIndex: 0 }}
 				navigation={navigation}
 				title="USER PROFILE"
 			/>
@@ -289,10 +289,11 @@ const MyProfile = ({ navigation }) => {
 			</View>
 
 			<MainBottomNavigation navigation={navigation} />
+			
 			<Modal
 				animationType="slide"
 				transparent={true}
-				isVisible={!modalVisible}
+				isVisible={false}
 				style={{
 					zIndex: 60,
 					position: "fixed",
@@ -303,7 +304,6 @@ const MyProfile = ({ navigation }) => {
 					backgroundColor: "white",
 					borderRadius: 10,
 					padding: 0,
-					// alignItems: "center",
 					shadowColor: "#000",
 					shadowOffset: {
 						width: 0,
@@ -312,12 +312,11 @@ const MyProfile = ({ navigation }) => {
 					shadowOpacity: 0.25,
 					shadowRadius: 4,
 					elevation: 5,
-					display:"none"
 				}}
-				// onRequestClose={() => {
-				// 	Alert.alert("Modal has been closed.");
-				// 	setModalVisible(false);
-				// }}
+				onRequestClose={() => {
+					Alert.alert("Modal has been closed.");
+					setModalVisible(false);
+				}}
 			>
 				<View
 					style={{
@@ -424,7 +423,7 @@ const MyProfile = ({ navigation }) => {
 							textAlign: "center",
 							marginVertical: 10,
 						}}
-						// onPress={() => setModalVisible(true)}
+						onPress={() => setModalVisible(!modalVisible)}
 					>
 						<Text>Save</Text>
 					</TouchableOpacity>

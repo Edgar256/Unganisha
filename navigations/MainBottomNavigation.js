@@ -18,6 +18,7 @@ export default function MainBottomNavigation(props) {
 				shadowOpacity: 0.36,
 				shadowOffset: { width: 0, height: 5 },
 				shadowRadius: 15,
+				zIndex: 0,
 			}}
 		>
 			<TouchableOpacity

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	View,
 	Text,
@@ -7,13 +7,21 @@ import {
 	Image,
 	TouchableOpacity,
 	ScrollView,
+	Button,
+	// Modal,
 } from "react-native";
 import { COLORS, FONTS } from "../constants/theme";
 import { images } from "../constants";
 import { MainTopNavigation, MainBottomNavigation } from "../navigations";
-import {PostCard} from "../components";
+import { PostCard } from "../components";
 
 const NewsFeed = ({ navigation }) => {
+	const [isModalVisible, setModalVisible] = useState(false);
+
+	const toggleModal = () => {
+		setModalVisible(!isModalVisible);
+	};
+
 	return (
 		<SafeAreaView style={{ width: "100%", height: "100%" }}>
 			<MainTopNavigation navigation={navigation} title="NEWSFEED" />
@@ -27,7 +35,8 @@ const NewsFeed = ({ navigation }) => {
 						position: "relative",
 						width: "100%",
 						zIndex: 44,
-						paddingVertical: 60,
+						paddingTop: 60,
+						paddingBottom: 80,
 						overflow: "scroll",
 						flexDirection: "column",
 					}}
@@ -112,10 +121,31 @@ const NewsFeed = ({ navigation }) => {
 						commentCount="8"
 						navigation={navigation}
 					/>
+					<View
+						style={{ flex: 1, backgroundColor: COLORS.white, width: "100%" }}
+					>
+						<Button title="Show modal" onPress={toggleModal} />
+
+						<Modal
+							visible={false}
+							style={{ backgroundColor: COLORS.white, width: "100%" }}
+						>
+							<View style={{}}>
+								<Text>Hello!</Text>
+
+								<Button title="Hide modal" onPress={toggleModal} />
+							</View>
+						</Modal>
+					</View>
 				</ScrollView>
 			</View>
-
 			<MainBottomNavigation navigation={navigation} />
+
+			{/* <Modal isVisible={false}>
+				<View style={{ flex: 1, padding: 20, backgroundColor: COLORS.white }}>
+					<Text style={{ fontSize: 40 }}>I am the modal content!</Text>
+				</View>
+			</Modal> */}
 		</SafeAreaView>
 	);
 };

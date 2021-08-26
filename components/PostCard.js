@@ -16,7 +16,7 @@ import MainBottomNavigation from "../navigations/MainBottomNavigation";
 export default function PostCard(props) {
 	return (
 		<View style={styles.feedTab}>
-			<View style={{ flexDirection: "row", flex: 1, padding: 5 }}>
+			<View style={{ flexDirection: "row", padding: 5 }}>
 				<Image
 					source={props.userImage}
 					resizeMode="contain"

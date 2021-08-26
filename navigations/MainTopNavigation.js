@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
 		position: "fixed",
 		top: 0,
 		width: "100%",
-		zIndex: 45,
+		zIndex: 10,
 	},
 	navigation: {
 		borderRadius: 0,
