@@ -74,7 +74,7 @@ export default function MainTopNavigation(props) {
 const styles = StyleSheet.create({
 	container: {
 		height: 60,
-		position: "fixed",
+		// position: "fixed",
 		top: 0,
 		width: "100%",
 		zIndex: 10,

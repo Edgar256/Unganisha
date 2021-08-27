@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
+import { Alert, StyleSheet, Text, Pressable, View,Modal } from "react-native";
+// import Modal from "modal-enhanced-react-native-web";
 
 const Demo = () => {
 	const [modalVisible, setModalVisible] = useState(false);

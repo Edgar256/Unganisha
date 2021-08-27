@@ -14,6 +14,7 @@ import { COLORS, FONTS } from "../constants/theme";
 import { images } from "../constants";
 import { MainTopNavigation, MainBottomNavigation } from "../navigations";
 import { PostCard } from "../components";
+import Modal from "modal-enhanced-react-native-web";
 
 const NewsFeed = ({ navigation }) => {
 	const [isModalVisible, setModalVisible] = useState(false);
@@ -27,7 +28,11 @@ const NewsFeed = ({ navigation }) => {
 			<MainTopNavigation navigation={navigation} title="NEWSFEED" />
 			<View
 				resizeMode="cover"
-				style={{ width: "100%", height: "100%", position: "fixed" }}
+				style={{
+					width: "100%",
+					height: "100%",
+					// position: "fixed"
+				}}
 			>
 				<ScrollView
 					style={{

@@ -18,7 +18,11 @@ const Settings = ({ navigation }) => {
 			<MainTopNavigation navigation={navigation} title="SETTINGS" />
 			<View
 				resizeMode="cover"
-				style={{ width: "100%", height: "100%", position: "fixed" }}
+				style={{
+					width: "100%",
+					height: "100%",
+					// position: "fixed"
+				}}
 			>
 				<ScrollView
 					style={{

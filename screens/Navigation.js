@@ -206,7 +206,7 @@ const Navigation = ({ navigation }) => {
 
 const styles = StyleSheet.create({
 	container: {
-		marginTop: 60,
+		marginTop: 0,
 		padding: 20,
 	},
 	image: {

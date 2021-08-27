@@ -10,7 +10,7 @@ export default function ChatBottomNavigation(props) {
 				flexDirection: "row",
 				width: "100%",
 				backgroundColor: "#FFFFFF",
-				position: "fixed",
+				// position: "fixed",
 				bottom: 0,
 				zIndex: 45,
 			}}

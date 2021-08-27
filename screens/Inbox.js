@@ -89,7 +89,11 @@ const Inbox = ({ navigation }) => {
 			<ImageBackground
 				source={images.chatBg}
 				resizeMode="cover"
-				style={{ width: "100%", height: "100%", position: "fixed" }}
+				style={{
+					width: "100%",
+					height: "100%",
+					// position: "fixed"
+				}}
 			>
 				<ScrollView
 					style={{
@@ -119,7 +123,7 @@ const Inbox = ({ navigation }) => {
 					flexDirection: "row",
 					width: "100%",
 					backgroundColor: "#FFFFFF",
-					position: "fixed",
+					// position: "fixed",
 					bottom: 0,
 					zIndex: 45,
 				}}
@@ -144,7 +148,7 @@ const Inbox = ({ navigation }) => {
 const styles = StyleSheet.create({
 	container: {
 		height: 60,
-		position: "fixed",
+		// position: "fixed",
 		top: 0,
 		width: "100%",
 		zIndex: 45,
