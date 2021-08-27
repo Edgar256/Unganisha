@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Chats from \"./Chats\";\nexport { Chats };","map":{"version":3,"sources":["D:/PROJECTS/ongea/screens/index.js"],"names":["Chats"],"mappings":"AAAA,OAAOA,KAAP;AAGA,SAASA,KAAT","sourcesContent":["import Chats from \"./Chats\";\r\n\r\n\r\nexport { Chats };\r\n"]},"metadata":{},"sourceType":"module"}

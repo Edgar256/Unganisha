@@ -1,0 +1,1 @@
+{"ast":null,"code":"import FollowerCard from \"./FollowerCard\";\nexport { FollowerCard };","map":{"version":3,"sources":["D:/PROJECTS/ongea/components/index.js"],"names":["FollowerCard"],"mappings":"AAAA,OAAOA,YAAP;AAEA,SAASA,YAAT","sourcesContent":["import FollowerCard from \"./FollowerCard\";\r\n\r\nexport { FollowerCard };\r\n"]},"metadata":{},"sourceType":"module"}
