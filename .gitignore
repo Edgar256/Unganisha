@@ -11,3 +11,7 @@
 
 # macOS
 /app/.DS_Store
+
+# BACKEND
+.env
+node_modules/

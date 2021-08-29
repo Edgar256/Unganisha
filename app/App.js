@@ -37,7 +37,7 @@ const Stack = createStackNavigator();
 export default function App() {
 	return (
 		<NavigationContainer theme={theme}>
-			<Stack.Navigator initialRouteName={"MyProfile"}>
+			<Stack.Navigator initialRouteName={"SignUp"}>
 				{/* Screens */}
 				<Stack.Screen
 					name="Chats"

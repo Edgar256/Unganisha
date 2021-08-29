@@ -22,7 +22,9 @@ const SignUp = ({ navigation }) => {
 	};
 
 	return (
-		<SafeAreaView style={{ width: "100%", height: "100%" }}>
+		<SafeAreaView
+			style={{ width: "100%", height: "100%", backgroundColor: COLORS.white }}
+		>
 			<LinearGradient
 				colors={[COLORS.primary, COLORS.secondary]}
 				style={styles.container}
@@ -54,35 +56,35 @@ const SignUp = ({ navigation }) => {
 					</Text>
 				</View>
 			</LinearGradient>
-			<View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
+			<View style={styles.formControl}>
 				<TextInput
 					style={styles.textInput}
 					onChangeText={onChangeText}
 					placeholder="First Name"
 				/>
 			</View>
-			<View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
+			<View style={styles.formControl}>
 				<TextInput
 					style={styles.textInput}
 					onChangeText={onChangeText}
 					placeholder="Last Name"
 				/>
 			</View>
-			<View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
+			<View style={styles.formControl}>
 				<TextInput
 					style={styles.textInput}
 					onChangeText={onChangeText}
 					placeholder="Email"
 				/>
 			</View>
-			<View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
+			<View style={styles.formControl}>
 				<TextInput
 					style={styles.textInput}
 					onChangeText={onChangeText}
 					placeholder="Password"
 				/>
 			</View>
-			<View style={{ paddingHorizontal: 20, paddingVertical: 10 }}>
+			<View style={styles.formControl}>
 				<TextInput
 					style={styles.textInput}
 					onChangeText={onChangeText}
@@ -172,6 +174,10 @@ const styles = StyleSheet.create({
 		borderWidth: 1,
 		borderColor: COLORS.lightGray,
 		borderRadius: 5,
+	},
+	formControl: {
+		paddingHorizontal: 20,
+		paddingVertical: 10
 	},
 });
 
