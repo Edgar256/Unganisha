@@ -25,11 +25,13 @@ app.use(express.json());
 // const adminRoutes = require("./routes/admins");
 const userRoutes = require("./routes/users");
 const postRoutes = require("./routes/posts");
+const commentRoutes = require("./routes/comments");
 
 //Routes middleware
 // app.use(`${API_URL}/admins`, adminRoutes);
 app.use(`${API_URL}/users`, userRoutes);
 app.use(`${API_URL}/posts`, postRoutes);
+app.use(`${API_URL}/comments`, commentRoutes);
 
 //Database connection
 mongoose
