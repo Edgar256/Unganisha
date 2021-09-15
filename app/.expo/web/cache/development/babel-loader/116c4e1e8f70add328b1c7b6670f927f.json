@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var apiURL = \"http://localhost:4000/api/v1\";","map":{"version":3,"sources":["D:/PROJECTS/unganisha/app/utils/apiURL.js"],"names":["apiURL"],"mappings":"AACA,OAAO,IAAMA,MAAM,iCAAZ","sourcesContent":["// API URL for development\r\nexport const apiURL = `http://localhost:4000/api/v1`;\r\n"]},"metadata":{},"sourceType":"module"}

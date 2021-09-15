@@ -37,7 +37,7 @@ const Stack = createStackNavigator();
 export default function App() {
 	return (
 		<NavigationContainer theme={theme}>
-			<Stack.Navigator initialRouteName={"SignUp"}>
+			<Stack.Navigator initialRouteName={"Login"}>
 				{/* Screens */}
 				<Stack.Screen
 					name="Chats"

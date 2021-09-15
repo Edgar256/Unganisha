@@ -1,24 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import {
 	View,
 	Text,
 	StyleSheet,
 	SafeAreaView,
 	Image,
-	Button,
 	TouchableHighlight,
-	Touchable,
 	TouchableOpacity,
 	TextInput,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { COLORS, FONTS, SIZES } from "../constants/theme";
 import { images } from "../constants";
-import { FontAwesome } from "@expo/vector-icons";
+import { apiURL } from "../utils/apiURL";
+import axios from "axios";
 
 const SignUp = ({ navigation }) => {
-	const onChangeText = () => {
-		console.log(123);
+	const [firstname, setFirstname] = useState("");
+	const [lastname, setLastname] = useState("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [confirmPassword, setConfirmPassword] = useState("");
+	const [error, setError] = useState("");
+
+	const handleLogin = () => {
+		if (!firstname || !lastname || !email || !password || !confirmPassword) {
+			setError("Please fill all fields");
+		}
+		if (password !== confirmPassword) {
+			setError("Password should match");
+		}
+		axios
+			.post(`${apiURL}/users/register`, {
+				firstName: firstname,
+				lastName: lastname,
+				email: email,
+				password: password,
+			})
+			.then((res) => {
+				if (res.data.success) {
+					alert(res.data.message);
+					setTimeout(() => {
+						navigation.navigate("Login");
+					}, 1000);
+				}else{
+					setError(res.data.error);
+				}
+			})
+			.catch((error) => {
+				console.log(error)
+				return error;
+			});
+		console.log(firstname, lastname, email, password, confirmPassword);
 	};
 
 	return (
@@ -59,37 +92,52 @@ const SignUp = ({ navigation }) => {
 			<View style={styles.formControl}>
 				<TextInput
 					style={styles.textInput}
-					onChangeText={onChangeText}
 					placeholder="First Name"
+					onChangeText={setFirstname}
 				/>
 			</View>
 			<View style={styles.formControl}>
 				<TextInput
 					style={styles.textInput}
-					onChangeText={onChangeText}
 					placeholder="Last Name"
+					onChangeText={setLastname}
 				/>
 			</View>
 			<View style={styles.formControl}>
 				<TextInput
 					style={styles.textInput}
-					onChangeText={onChangeText}
 					placeholder="Email"
+					type="email"
+					autoCompleteType="email"
+					onChangeText={setEmail}
 				/>
 			</View>
 			<View style={styles.formControl}>
 				<TextInput
 					style={styles.textInput}
-					onChangeText={onChangeText}
 					placeholder="Password"
+					type="password"
+					autoCompleteType="password"
+					secureTextEntry={true}
+					onChangeText={setPassword}
 				/>
 			</View>
 			<View style={styles.formControl}>
 				<TextInput
 					style={styles.textInput}
-					onChangeText={onChangeText}
 					placeholder="Confirm Password"
+					type="password"
+					autoCompleteType="password"
+					secureTextEntry={true}
+					onChangeText={setConfirmPassword}
 				/>
+			</View>
+			<View style={{ paddingHorizontal: 20 }}>
+				{error ? (
+					<Text style={{ color: "red", textAlign: "center" }}>{error}</Text>
+				) : (
+					<Text> </Text>
+				)}
 			</View>
 			<View
 				style={{
@@ -117,7 +165,7 @@ const SignUp = ({ navigation }) => {
 					activeOpacity={0.6}
 					underlayColor="#4327C2"
 					style={({ ...FONTS.body3 }, styles.btn)}
-					onPress={() => navigation.navigate("Login")}
+					onPress={() => handleLogin()}
 				>
 					<Text style={{ flexDirection: "row", color: COLORS.white }}>
 						SignUp
@@ -177,7 +225,7 @@ const styles = StyleSheet.create({
 	},
 	formControl: {
 		paddingHorizontal: 20,
-		paddingVertical: 10
+		paddingVertical: 10,
 	},
 });
 

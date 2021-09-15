@@ -160,7 +160,7 @@ router.post("/register", async (req, res) => {
 			.save()
 			.then((userSaved) => {
 				res.status(201).json({
-					message: `${userSaved.firstName} has been saved`,
+					message: `YOUR ACCOUNT HAS BEEN SUCCESSFULLY CREATED`,
 					success: true,
 				});
 			})
